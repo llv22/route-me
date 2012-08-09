@@ -8,7 +8,9 @@
 
 #import "MainView.h"
 
-#import "RMCloudMadeMapSource.h"
+//TODO : modfication referred from https://groups.google.com/forum/?fromgroups#!topic/route-me-map/YajRgFDoN00%5B1-25%5D
+//#import "RMCloudMadeMapSource.h"
+#import "RMOpenStreetMapSource.h"
 
 @implementation MainViewController
 
@@ -27,7 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [mapView setDelegate:self];
-	id myTilesource = [[[RMCloudMadeMapSource alloc] initWithAccessKey:@"0199bdee456e59ce950b0156029d6934" styleNumber:999] autorelease];
+    
+    //TODO : change to RMOpenStreetMapSource.h
+	id myTilesource = [[[RMOpenStreetMapSource alloc] init] autorelease];
+//	id myTilesource = [[[RMCloudMadeMapSource alloc] initWithAccessKey:@"0199bdee456e59ce950b0156029d6934" styleNumber:999] autorelease];
     
 	// have to initialize the RMMapContents object explicitly if we want it to use a particular tilesource
 	[[[RMMapContents alloc] initWithView:mapView 
