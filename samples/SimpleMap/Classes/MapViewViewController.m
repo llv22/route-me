@@ -145,8 +145,8 @@
 
 - (void) tapOnLabelForMarker:(RMMarker*) marker onMap:(RMMapView*) map
 {
-	NSLog(@"Label <0x%x, RC:%U> tapped for marker <0x%x, RC:%U>",  marker.label, [marker.label retainCount], marker, [marker retainCount]);
-	[marker changeLabelUsingText:[NSString stringWithFormat:@"Tapped! (%U)", ++tapCount]];
+	NSLog(@"Label <0x%x, RC:%u> tapped for marker <0x%x, RC:%u>",  marker.label, [marker.label retainCount], marker, [marker retainCount]);
+	[marker changeLabelUsingText:[NSString stringWithFormat:@"Tapped! (%u)", ++tapCount]];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view.

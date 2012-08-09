@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = B8C974590E8A19B2007D16AD;
 			remoteInfo = MapView;
+		};
+		F189C7AF15D368DE00C3B7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBE3696D0F673B95003DC21C /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17157D87133BBC8300E28941;
+			remoteInfo = MapViewTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -169,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE3697D0F673B95003DC21C /* libMapView.a */,
+				F189C7B015D368DE00C3B7DE /* MapViewTests.octest */,
 				2B246AE20F8ADD5F00A7D55D /* RM Unit Tests.app */,
 			);
 			name = Products;
@@ -200,8 +208,12 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleMap" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -238,6 +250,13 @@
 			fileType = archive.ar;
 			path = libMapView.a;
 			remoteRef = EBE3697C0F673B95003DC21C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F189C7B015D368DE00C3B7DE /* MapViewTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MapViewTests.octest;
+			remoteRef = F189C7AF15D368DE00C3B7DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -322,7 +341,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -336,7 +354,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
