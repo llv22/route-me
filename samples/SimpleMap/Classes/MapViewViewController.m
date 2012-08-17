@@ -100,11 +100,11 @@
    return YES;
 }
 
+//  TODO : don't let it movable or drag&drop
 - (void)mapView:(RMMapView *)map didDragMarker:(RMMarker *)marker withEvent:(UIEvent *)event 
 {
-    CGPoint position = [[[event allTouches] anyObject] locationInView:mapView];
-	RMMarkerManager *markerManager = [mapView markerManager];
-//  TODO : don't let it movable or drag&drop
+//  CGPoint position = [[[event allTouches] anyObject] locationInView:mapView];
+//	RMMarkerManager *markerManager = [mapView markerManager];
 //	NSLog(@"New location: east:%lf north:%lf", [marker projectedLocation].easting, [marker projectedLocation].northing);
 //	CGRect rect = [marker bounds];
 //	
