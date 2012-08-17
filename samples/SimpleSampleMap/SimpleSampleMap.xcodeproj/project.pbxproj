@@ -48,6 +48,13 @@
 			remoteGlobalIDString = B8C974130E8A19B2007D16AD;
 			remoteInfo = MapView;
 		};
+		F171752915DA222D00F2ED63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C4685B0F6C68DC00E99EC4 /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17157D87133BBC8300E28941;
+			remoteInfo = MapViewTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				52C468670F6C68DC00E99EC4 /* libMapView.a */,
+				F171752A15DA222D00F2ED63 /* MapViewTests.octest */,
 				523CDE190F98FA870093E7FA /* RM Unit Tests.app */,
 			);
 			name = Products;
@@ -201,7 +209,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleSampleMap" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectReferences = (
@@ -230,6 +242,13 @@
 			fileType = archive.ar;
 			path = libMapView.a;
 			remoteRef = 52C468660F6C68DC00E99EC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F171752A15DA222D00F2ED63 /* MapViewTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MapViewTests.octest;
+			remoteRef = F171752915DA222D00F2ED63 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

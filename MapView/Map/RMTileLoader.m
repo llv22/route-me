@@ -96,18 +96,16 @@
 	return contained && targetZoom == loadedZoom;
 }
 
-
+//TODO : update loadedImages in tile image
 -(void) updateLoadedImages
 {
 	if (suppressLoading)
 		return;
 	
-	if ([content mercatorToTileProjection] == nil || [content  
-													  mercatorToScreenProjection] == nil)
+	if ([content mercatorToTileProjection] == nil || [content mercatorToScreenProjection] == nil)
 		return;
 	
-	// delay display of new images until expensive operations are  
-	//allowed
+	// delay display of new images until expensive operations are allowed
 	[[NSNotificationCenter defaultCenter] removeObserver:self  
 													name:RMResumeExpensiveOperations object:nil];
 	if ([RMMapContents performExpensiveOperations] == NO)
@@ -124,13 +122,12 @@
 	//RMLog(@"updateLoadedImages initial count = %d", [[content imagesOnScreen] count]);
 	
 	RMTileRect newTileRect = [content tileBounds];
-	
 	RMTileImageSet *images = [content imagesOnScreen];
 	images.zoom = newTileRect.origin.tile.zoom;
 	CGRect newLoadedBounds = [images addTiles:newTileRect ToDisplayIn:
 							  [content screenBounds]];
+    
 	//RMLog(@"updateLoadedImages added count = %d", [images count]);
-	
 	
 	if (!RMTileIsDummy(loadedTiles.origin.tile))
 	{
@@ -144,7 +141,6 @@
 	loadedTiles = newTileRect;
 	
 	[content tilesUpdatedRegion:newLoadedBounds];
-	
 } 
 
 /*

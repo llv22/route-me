@@ -67,6 +67,7 @@
 	}
 	[marker setProjectedLocation:projectedPoint];
 	[marker setPosition:[[contents mercatorToScreenProjection] projectXYPoint:projectedPoint]];
+    
 	[[contents overlay] addSublayer:marker];
 }
 

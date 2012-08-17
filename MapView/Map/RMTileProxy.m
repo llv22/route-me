@@ -33,6 +33,7 @@ static UIImage *_errorTile = nil;
 static UIImage *_loadingTile = nil;
 static UIImage *_missingTile = nil;
 
+//TODO : Loading error for RMMapView control
 + (UIImage*) errorTile
 {
 	if (_errorTile) return _errorTile;
@@ -41,6 +42,7 @@ static UIImage *_missingTile = nil;
 	return _errorTile;
 }
 
+//TODO : Loading successfully for RMMapView control
 + (UIImage*) loadingTile
 {
 	if (_loadingTile) return _loadingTile;
@@ -49,6 +51,7 @@ static UIImage *_missingTile = nil;
 	return _loadingTile;
 }
 
+//TODO : Loading missing tiles for RMMapView control
 + (UIImage*) missingTile
 {
 	if (_missingTile) return _missingTile;

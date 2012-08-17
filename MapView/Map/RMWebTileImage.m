@@ -46,6 +46,7 @@ static NSOperationQueue *_queue = nil;
 
 + (void) initialize
 {
+    //TODO : intialization of NSOperationQueue for WebRequest.
     _queue = [[NSOperationQueue alloc] init];
     [_queue setMaxConcurrentOperationCount:kMaxConcurrentConnections];
 }
@@ -54,21 +55,21 @@ static NSOperationQueue *_queue = nil;
 {
 	if (![super initWithTile:_tile])
 		return nil;
-
+    
+	//TODO : previously loading the loading.png as loading background
+    //[super displayproxy:] will load the [RMTileProxy loadingTile] as dummy background picture.
+    //[RMTileProxy loadingTile] will load the loading.png picture by default, so if you want to customize loadingTile, you have to change the [RMTileProxy loadingTile] by yourself.
 	[super displayProxy:[RMTileProxy loadingTile]];
 
-	
 	url = [[NSURL alloc] initWithString:urlStr];
-
-
     connectionOp = nil;
-		
     data =[[NSMutableData alloc] initWithCapacity:0];
-    
 	retries = kWebTileRetries;
 	
+    //TODO : Post notification to listener in MapViewAppDelegate monitor - asynchronous operations
 	[[NSNotificationCenter defaultCenter] postNotificationName:RMTileRequested object:self];
-
+    
+	//TODO : request for real Tile on the server side
 	[self requestTile];
 	
 	return self;
@@ -89,6 +90,7 @@ static NSOperationQueue *_queue = nil;
 	[super dealloc];
 }
 
+//TODO : Core implementation of requestTile immdiately and with retrial time duration 1.0 seconds;
 - (void) requestTile
 {
 	//RMLog(@"fetching: %@", url);
@@ -120,6 +122,7 @@ static NSOperationQueue *_queue = nil;
 	}
 }
 
+//TODO : for adding request into queue operation
 - (void)startLoading:(NSTimer *)timer
 {
 	NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:30.0];

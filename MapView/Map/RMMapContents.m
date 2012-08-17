@@ -39,6 +39,13 @@
 #import "RMTileImageSet.h"
 
 #import "RMOpenStreetMapSource.h"
+//TODO : How-to extend the style for multi-source or customized tile server? - Orlando, 2012-08
+#import "RMMapQuestOSMSource.h"
+#import "RMVirtualEarthSource.h"
+#import "RMYahooMapSource.h"
+#import "RMOpenCycleMapSource.h"
+#import "RMOpenAerialMapSource.h"
+//TODO : How-to extend the style for multi-source or customized tile server? - Orlando, 2012-08
 #import "RMCoreAnimationRenderer.h"
 #import "RMCachedTileSource.h"
 
@@ -99,7 +106,12 @@
 	here.longitude = kDefaultInitialLongitude;
 	
 	return [self initWithView:view
-				   tilesource:[[RMOpenStreetMapSource alloc] init]
+            //TODO : tilesource for internal map implementation
+            // Viral Earch should be hold with key
+//				   tilesource:[[RMOpenStreetMapSource alloc] init]
+//                    tilesource:[[RMMapQuestOSMSource alloc] init]
+//            tilesource:[[RMYahooMapSource alloc] init]
+            tilesource:[[RMMapQuestOSMSource alloc] init]
 				 centerLatLon:here
 	  			    zoomLevel:kDefaultInitialZoomLevel
 				 maxZoomLevel:kDefaultMaximumZoomLevel
@@ -180,7 +192,7 @@
 	
 	[tileLoader setSuppressLoading:NO];
 	
-	/// \bug TODO: Make a nice background class
+	/// \bug TODO: Make a nice background class - New background picture
 	RMMapLayer *theBackground = [[RMMapLayer alloc] init];
 	[self setBackground:theBackground];
 	[theBackground release];
@@ -642,12 +654,11 @@
 		return;
 	
 	RMCachedTileSource *newCachedTileSource = [RMCachedTileSource cachedTileSourceWithSource:newTileSource];
-
 	newCachedTileSource = [newCachedTileSource retain];
 	[tileSource release];
 	tileSource = newCachedTileSource;
-
-        NSAssert(([tileSource minZoom] - minZoom) <= 1.0, @"Graphics & memory are overly taxed if [contents minZoom] is more than 1.5 smaller than [tileSource minZoom]");
+    
+    NSAssert(([tileSource minZoom] - minZoom) <= 1.0, @"Graphics & memory are overly taxed if [contents minZoom] is more than 1.5 smaller than [tileSource minZoom]");
 	
 	[projection release];
 	projection = [[tileSource projection] retain];
@@ -657,8 +668,9 @@
 
 	[imagesOnScreen setTileSource:tileSource];
 
-        [tileLoader reset];
-	[tileLoader reload];
+    //TODO : for resetting content
+    [tileLoader reset];
+    [tileLoader reload];
 }
 
 - (id<RMTileSource>) tileSource
@@ -698,6 +710,7 @@
 	return [[renderer retain] autorelease];
 }
 
+//TODO : the loading background pict-08
 - (void) setBackground: (RMMapLayer*) aLayer
 {
 	if (background == aLayer) return;

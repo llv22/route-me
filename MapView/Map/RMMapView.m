@@ -26,6 +26,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #import "RMMapView.h"
+//#import "RMMapView+ShowUserLocation.h" -> don't need this during runtime
 #import "RMMapContents.h"
 #import "RMMapViewDelegate.h"
 
@@ -62,7 +63,7 @@
 
 - (RMMarkerManager*)markerManager
 {
-  return self.contents.markerManager;
+    return self.contents.markerManager;
 }
 
 -(void) performInitialSetup
@@ -79,9 +80,11 @@
     
 	//	[self recalculateImageSet];
 	
-	if (enableZoom || enableRotate)
+	if (enableZoom || enableRotate){
 		[self setMultipleTouchEnabled:TRUE];
+    }
 	
+    //TODO : the default background color
 	self.backgroundColor = [UIColor grayColor];
 	
 	_constrainMovement=NO;

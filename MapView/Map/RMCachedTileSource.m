@@ -71,6 +71,7 @@
 	}
 	else
 	{
+        //TODO : RMCachedTileImage to load the existing loading.png
 		RMTileImage *image = [tileSource tileImage:tile];
 		[cache addTile:tile WithImage:image];
 		return image;

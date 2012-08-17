@@ -172,6 +172,7 @@
 	return RMTilesEqual(tile, [(RMTileImage*)anObject tile]);
 }
 
+//TODO : make Animation Layer on top of View
 - (void)makeLayer
 {
 	if (layer == nil)
@@ -234,7 +235,7 @@
 
 - (void) displayProxy:(UIImage*) img
 {
-        layer.contents = (id)[img CGImage]; 
+    layer.contents = (id)[img CGImage];
 }
 
 @end

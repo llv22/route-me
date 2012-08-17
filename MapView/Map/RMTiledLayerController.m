@@ -124,6 +124,7 @@
 	[self setScale: scale * zoomFactor];
 }
 
+//TODO : Not loading the current background
 - (void)drawLayer:(CALayer *)theLayer
         inContext:(CGContextRef)theContext
 {

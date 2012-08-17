@@ -11,6 +11,7 @@
 
 @implementation ProgrammaticMapViewController
 
+//http://code.google.com/p/route-me/wiki/EmbeddingGuide
 @synthesize mapView;
 
 

@@ -32,6 +32,12 @@
 #import "RMMarker.h"
 #import "RMMarkerManager.h"
 
+//TODO : google group - https://groups.google.com/forum/?fromgroups#!forum/route-me-map
+//TODO : issue - http://code.google.com/p/route-me/issues/list
+
+//TODO : customized tile server address
+#import "RMVirtualEarthSource.h"
+
 @implementation MapViewViewController
 
 @synthesize mapView;
@@ -55,14 +61,12 @@
 {
 	RMMarkerManager *markerManager = [mapView markerManager];
 	NSArray *markers = [markerManager markers];
-	
 	NSLog(@"Nb markers %d", [markers count]);
 	
 	NSEnumerator *markerEnumerator = [markers objectEnumerator];
 	RMMarker *aMarker;
 	
 	while (aMarker = (RMMarker *)[markerEnumerator nextObject])
-		
 	{
 		RMProjectedPoint point = [aMarker projectedLocation];
 		NSLog(@"Marker projected location: east:%lf, north:%lf", point.easting, point.northing);
@@ -78,20 +82,14 @@
 	RMMarker *marker = [[RMMarker alloc]initWithUIImage:[UIImage imageNamed:@"marker-blue.png"]
 											anchorPoint:CGPointMake(0.5, 1.0)];
 	[marker changeLabelUsingText:@"Hello"];
-	
 	[markerManager addMarker:marker AtLatLong:[[mapView contents] mapCenter]];
-	
 	[marker release];
+    
 	markers  = [markerManager markersWithinScreenBounds];
-	
 	NSLog(@"Nb Markers in Screen: %d", [markers count]);
-	
 	//	[mapView getScreenCoordinateBounds];
-	
 	[markerManager hideAllMarkers];
 	[markerManager unhideAllMarkers];
-	
-
 }
 
 - (BOOL)mapView:(RMMapView *)map shouldDragMarker:(RMMarker *)marker withEvent:(UIEvent *)event
@@ -104,15 +102,13 @@
 
 - (void)mapView:(RMMapView *)map didDragMarker:(RMMarker *)marker withEvent:(UIEvent *)event 
 {
-   CGPoint position = [[[event allTouches] anyObject] locationInView:mapView];
-   
+    CGPoint position = [[[event allTouches] anyObject] locationInView:mapView];
 	RMMarkerManager *markerManager = [mapView markerManager];
-
-	NSLog(@"New location: east:%lf north:%lf", [marker projectedLocation].easting, [marker projectedLocation].northing);
-	CGRect rect = [marker bounds];
-	
-	[markerManager moveMarker:marker AtXY:CGPointMake(position.x,position.y +rect.size.height/3)];
-
+//  TODO : don't let it movable or drag&drop
+//	NSLog(@"New location: east:%lf north:%lf", [marker projectedLocation].easting, [marker projectedLocation].northing);
+//	CGRect rect = [marker bounds];
+//	
+//	[markerManager moveMarker:marker AtXY:CGPointMake(position.x,position.y +rect.size.height/3)];
 }
 
 - (void) singleTapOnMap: (RMMapView*) map At: (CGPoint) point
@@ -123,24 +119,23 @@
 - (void) tapOnMarker: (RMMarker*) marker onMap: (RMMapView*) map
 {
 	NSLog(@"MARKER TAPPED!");
-	RMMarkerManager *markerManager = [mapView markerManager];
-	if(!tap)
-	{
-		[marker replaceUIImage:[UIImage imageNamed:@"marker-red.png"]];
-		[marker changeLabelUsingText:@"World"];
-		tap=YES;
-		[markerManager moveMarker:marker AtXY:CGPointMake([marker position].x,[marker position].y + 20.0)];
-		[mapView setDeceleration:YES];
-	}else
-	{
-			[marker replaceUIImage:[UIImage imageNamed:@"marker-blue.png"]
-					   anchorPoint:CGPointMake(0.5, 1.0)];
-		[marker changeLabelUsingText:@"Hello"];
-		[markerManager moveMarker:marker AtXY:CGPointMake([marker position].x,[marker position].y - 20.0)];
-		tap=NO;
-		[mapView setDeceleration:NO];
-	}
-
+//	RMMarkerManager *markerManager = [mapView markerManager];
+//	if(!tap)
+//	{
+//		[marker replaceUIImage:[UIImage imageNamed:@"marker-red.png"]];
+//		[marker changeLabelUsingText:@"World"];
+//		tap=YES;
+//		[markerManager moveMarker:marker AtXY:CGPointMake([marker position].x,[marker position].y + 20.0)];
+//		[mapView setDeceleration:YES];
+//	}else
+//	{
+//        [marker replaceUIImage:[UIImage imageNamed:@"marker-blue.png"]
+//                   anchorPoint:CGPointMake(0.5, 1.0)];
+//		[marker changeLabelUsingText:@"Hello"];
+//		[markerManager moveMarker:marker AtXY:CGPointMake([marker position].x,[marker position].y - 20.0)];
+//		tap=NO;
+//		[mapView setDeceleration:NO];
+//	}
 }
 
 - (void) tapOnLabelForMarker:(RMMarker*) marker onMap:(RMMapView*) map
@@ -153,20 +148,31 @@
 - (void)viewDidLoad {
 	NSLog(@"%@ viewDidLoad", self);
     [super viewDidLoad];
+    
+    //TODO : setup with delegate of MapView and tap with @(NO) for switching dummy marker.
 	tap=NO;
-	RMMarkerManager *markerManager = [mapView markerManager];
 	[mapView setDelegate:self];
+    //TODO : cusomized Tile source - https://groups.google.com/forum/?fromgroups#!searchin/route-me-map/route-me$20we$20Tile$20source/route-me-map/rM8mQ6PBqWM/H_Hh5VhfLDoJ%5B1-25%5D
+//    TODO : conflict with Tile Source initilization
+//    [mapView.contents setTileSource:[[[RMVirtualEarthSource alloc] init]retain]];
 	
+    //TODO : adjustment of screen central location
 	CLLocationCoordinate2D coolPlace;
-	coolPlace.latitude = -33.9464;
-	coolPlace.longitude = 151.2381;
+    //Move to NanJing's zhong shang maintain
+	coolPlace.latitude = 32.074284;
+	coolPlace.longitude = 118.84203;
+    [mapView moveToLatLong:coolPlace];
+    mapView.showUserLocation = YES;
 	
-	RMMarker *marker = [[RMMarker alloc]initWithUIImage:[UIImage imageNamed:@"marker-blue.png"]
-											anchorPoint:CGPointMake(0.5, 1.0)];
-	[marker setTextForegroundColor:[UIColor blueColor]];
-	[marker changeLabelUsingText:@"Hello"];
-	[markerManager addMarker:marker AtLatLong:[[mapView contents] mapCenter]];
-	[marker release];
+    //TODO : make marker via markerManager
+//	RMMarker *marker = [[RMMarker alloc]initWithUIImage:[UIImage imageNamed:@"marker-blue.png"]
+//											anchorPoint:CGPointMake(0.5, 1.0)];
+//	[marker setTextForegroundColor:[UIColor blueColor]];
+//	[marker changeLabelUsingText:@"Hello"];
+//    
+//	RMMarkerManager *markerManager = [mapView markerManager];
+//	[markerManager addMarker:marker AtLatLong:[[mapView contents] mapCenter]];
+//	[marker release];
 	NSLog(@"Center: Lat: %lf Lon: %lf", mapView.contents.mapCenter.latitude, mapView.contents.mapCenter.longitude);
 }
 

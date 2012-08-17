@@ -106,6 +106,7 @@
 	tileSource = newTileSource;
 }
 
+//TODO : addTile: withImage At: - loading of images
 -(void) addTile: (RMTile) tile WithImage: (RMTileImage *)image At: (CGRect) screenLocation
 {
 	BOOL tileNeeded;
@@ -147,6 +148,7 @@
 	}
 }
 
+//TODO : addTile for screen location
 -(void) addTile: (RMTile) tile At: (CGRect) screenLocation
 {
 	//	RMLog(@"addTile: %d %d", tile.x, tile.y);
@@ -167,6 +169,7 @@
 	}
 }
 
+// TODO : addTiles for implementation of mapnik server on site
 // Add tiles inside rect protected to bounds. Return rectangle containing bounds
 // extended to full tile loading area
 -(CGRect) addTiles: (RMTileRect)rect ToDisplayIn:(CGRect)bounds

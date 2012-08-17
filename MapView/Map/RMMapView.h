@@ -92,6 +92,8 @@ git clone git://github.com/route-me/route-me.git
 #import "RMMapViewDelegate.h"
 #import "RMMapContents.h"
 
+@class ShowUserLocationProxy;
+
 /*! 
  \struct RMGestureDetails
  iPhone-specific mapview stuff. Handles event handling, whatnot.
@@ -121,12 +123,17 @@ typedef struct {
 	id<RMMapViewDelegate> delegate;
 	BOOL enableDragging;
 	BOOL enableZoom;
-        BOOL enableRotate;
+    BOOL enableRotate;
+    
 	RMGestureDetails lastGesture;
 	float decelerationFactor;
 	BOOL deceleration;
-        CGFloat rotation;
+    CGFloat rotation;
     float screenScale;
+    
+    //\field showUserLocation - storage and extends in RMMapView+ShowUserLocation
+    //\author - Orlando, 2012-08
+    ShowUserLocationProxy *_showUserProxy;
 	
 @private
    	BOOL _delegateHasBeforeMapMove;

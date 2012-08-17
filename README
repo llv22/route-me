@@ -1,0 +1,21 @@
+Orlando's refactoring of route-me implemenation
+1, enhancement of supported Tile Source:
+***planned to add njosmTileSource for localization of high resolution-pixel traffic map***
+-> osm mapnik enhancement
+-> tile source implementation
+
+2, loading/error/missing tile enhancement
+-> Tile Images/RMTileProxy.m 
+override the pngs; and also compress and load high resolution-pixel picture
+
+3, enhancement of route-me RMMapView to customized Orlando's MapView
+-> showUserLocation implementation
+* wrapped marker to UserLocation CALayer with animiation
+   i) UserLocation in naive proxy - ShowUserLocationProxy
+      => RMMapView - add ShowUserLocationProxy* proxy instance
+      => RMMapView+ShowUserLocation - add informal protocol to enable
+      => ShowUserLocationProxy - add location monitor & marker
+	TODO : 
+	1) better wrapper of marker for userlocation;
+	2) animiation for userlocation;       
+* wrapped track with animiation and updating

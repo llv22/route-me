@@ -36,10 +36,8 @@
 		return nil;
 
 	UIImage *image = [[UIImage alloc] initWithContentsOfFile:file];
-
-        [self updateImageUsingImage:image];
-
-        [image release];
+    [self updateImageUsingImage:image];
+    [image release];
 
 	return self;
 }

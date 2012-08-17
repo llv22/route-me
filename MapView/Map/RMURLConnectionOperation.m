@@ -89,7 +89,7 @@
     // If the operation is not canceled, begin executing the task.
     [self willChangeValueForKey:@"isExecuting"];
     
-    //the magical run loop trick will force NSURLConnection to call the delegate methods on main thread 
+    //the magical run loop trick will force NSURLConnection to call the delegate methods on main thread - NSPort notification
     [[NSRunLoop mainRunLoop] addPort:self.port forMode:NSDefaultRunLoopMode];
     [_connection scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [self.connection start];

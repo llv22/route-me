@@ -95,6 +95,7 @@
 	return exp2f(zoom);
 }
 
+//TODO : mask for normaliseTile
 - (RMTile) normaliseTile: (RMTile) tile
 {
 	// The mask contains a 1 for every valid x-coordinate bit.
