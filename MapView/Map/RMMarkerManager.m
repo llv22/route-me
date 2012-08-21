@@ -68,6 +68,8 @@
 	[marker setProjectedLocation:projectedPoint];
 	[marker setPosition:[[contents mercatorToScreenProjection] projectXYPoint:projectedPoint]];
     
+    //\bug - add animiation for marker - http://route-me.googlecode.com/svn-history/r250/branches/issue59/MapView/Map/RMMarker.m
+    //http://mappingdev.wordpress.com/tag/route-me-2/
 	[[contents overlay] addSublayer:marker];
 }
 

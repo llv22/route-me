@@ -126,10 +126,6 @@
     
     //TODO : refer to marker implementation - CLLocation -> CLLocationCoordinate2D
     CLLocationCoordinate2D _newClloationcoordinate = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-//TODO : refer to marker conversion
-//  [marker setProjectedLocation:projectedPoint];
-//	[marker setPosition:[[contents mercatorToScreenProjection] projectXYPoint:projectedPoint]];
-    //	[[contents overlay] addSublayer:marker];
     //TODO : make marker via markerManager
 	RMMarker *marker = [[RMMarker alloc]initWithUIImage:_userBluedot
 											anchorPoint:CGPointMake(0.5, 1.0)];
