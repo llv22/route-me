@@ -25,6 +25,7 @@
 		EBDDE0E20F649CE100377FFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDDE0E10F649CE100377FFE /* QuartzCore.framework */; };
 		EBDDE0E40F649CE100377FFE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDDE0E30F649CE100377FFE /* libsqlite3.dylib */; };
 		EBE3697E0F673B9A003DC21C /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE3697D0F673B95003DC21C /* libMapView.a */; };
+		F14BA13F15E33C2D001B0F5E /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = F14BA13E15E33C2D001B0F5E /* currentLocation.png */; };
 		F16E80DF15DE421300008188 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F16E80DE15DE421300008188 /* Location.gpx */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		EBDDE0E10F649CE100377FFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EBDDE0E30F649CE100377FFE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		EBE3696D0F673B95003DC21C /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = ../../MapView/MapView.xcodeproj; sourceTree = SOURCE_ROOT; };
+		F14BA13E15E33C2D001B0F5E /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		F16E80DE15DE421300008188 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				F14BA13E15E33C2D001B0F5E /* currentLocation.png */,
 				EBE3696D0F673B95003DC21C /* MapView.xcodeproj */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				966504400F6867E60036562A /* Classes */,
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14BA13F15E33C2D001B0F5E /* currentLocation.png in Resources */,
 				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				9665044E0F6868000036562A /* loading.png in Resources */,

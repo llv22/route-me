@@ -61,7 +61,7 @@
 
 	// only set the AffineTransform if the marker has rotation enabled
 	if (marker.enableRotation) {
-	[marker setAffineTransform:rotationTransform];
+        [marker setAffineTransform:rotationTransform];
 	} else {
 		[marker setAffineTransform:CGAffineTransformMakeRotation(0.0f)];
 	}
