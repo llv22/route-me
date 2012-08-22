@@ -103,12 +103,12 @@
 //  TODO : don't let it movable or drag&drop
 - (void)mapView:(RMMapView *)map didDragMarker:(RMMarker *)marker withEvent:(UIEvent *)event 
 {
-  CGPoint position = [[[event allTouches] anyObject] locationInView:mapView];
-	RMMarkerManager *markerManager = [mapView markerManager];
-	NSLog(@"New location: east:%lf north:%lf", [marker projectedLocation].easting, [marker projectedLocation].northing);
-	CGRect rect = [marker bounds];
-	
-	[markerManager moveMarker:marker AtXY:CGPointMake(position.x,position.y +rect.size.height/3)];
+//  CGPoint position = [[[event allTouches] anyObject] locationInView:mapView];
+//	RMMarkerManager *markerManager = [mapView markerManager];
+//	NSLog(@"New location: east:%lf north:%lf", [marker projectedLocation].easting, [marker projectedLocation].northing);
+//	CGRect rect = [marker bounds];
+//	
+//	[markerManager moveMarker:marker AtXY:CGPointMake(position.x,position.y +rect.size.height/3)];
 }
 
 - (void) singleTapOnMap: (RMMapView*) map At: (CGPoint) point
@@ -141,7 +141,7 @@
 - (void) tapOnLabelForMarker:(RMMarker*) marker onMap:(RMMapView*) map
 {
 	NSLog(@"Label <0x%x, RC:%u> tapped for marker <0x%x, RC:%u>",  marker.label, [marker.label retainCount], marker, [marker retainCount]);
-	[marker changeLabelUsingText:[NSString stringWithFormat:@"Tapped! (%u)", ++tapCount]];
+//	[marker changeLabelUsingText:[NSString stringWithFormat:@"Tapped! (%u)", ++tapCount]];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view.

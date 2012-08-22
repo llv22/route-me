@@ -64,19 +64,29 @@
 	return [self initWithUIImage:image anchorPoint: defaultMarkerAnchorPoint];
 }
 
-- (id) initWithUIImage: (UIImage*) image anchorPoint: (CGPoint) _anchorPoint
+//TODO : add default boundary for animiation - initWithUIImage
+- (id) initWithUIImage: (UIImage*) image
+           anchorPoint: (CGPoint) _anchorPoint
+        animiationRect:(CGRect)_bounds
 {
 	if (![self init])
 		return nil;
     
 	self.contents = (id)[image CGImage];
-	self.bounds = CGRectMake(0,0,image.size.width,image.size.height);
+	self.bounds = _bounds;
 	self.anchorPoint = _anchorPoint;
 	
 	self.masksToBounds = NO;
 	self.label = nil;
 	
 	return self;
+}
+
+- (id) initWithUIImage: (UIImage*) image
+           anchorPoint: (CGPoint) _anchorPoint
+{
+    CGRect _bounds = CGRectMake(0,0,image.size.width,image.size.height);
+    return [self initWithUIImage:image anchorPoint:_anchorPoint animiationRect:_bounds];
 }
 
 - (void) replaceUIImage: (UIImage*) image
@@ -87,8 +97,17 @@
 - (void) replaceUIImage: (UIImage*) image
 			anchorPoint: (CGPoint) _anchorPoint
 {
+	CGRect _bounds = CGRectMake(0,0,image.size.width,image.size.height);
+    [self replaceUIImage:image anchorPoint:_anchorPoint animiationRect:_bounds];
+}
+
+//TODO : add default boundary for animiation - replaceUIImage
+- (void) replaceUIImage: (UIImage*) image
+			anchorPoint: (CGPoint) _anchorPoint
+         animiationRect: (CGRect)_bounds
+{
 	self.contents = (id)[image CGImage];
-	self.bounds = CGRectMake(0,0,image.size.width,image.size.height);
+	self.bounds = _bounds;
 	self.anchorPoint = _anchorPoint;
 	
 	self.masksToBounds = NO;

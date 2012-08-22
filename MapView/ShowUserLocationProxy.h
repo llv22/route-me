@@ -11,6 +11,7 @@
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
 @class RMMapView;
+@class RMUserLocationMarker;
 
 @interface ShowUserLocationProxy : NSObject<CLLocationManagerDelegate>{
     BOOL _showUserLocationStarted;
@@ -19,6 +20,7 @@
     UIImage* _userBluedot;
     //TODO : reference of RMMapView to update user location dot
     RMMapView* _theMap;
+    RMUserLocationMarker *marker;
 }
 
 @property (readwrite) BOOL showUserLocationStarted;

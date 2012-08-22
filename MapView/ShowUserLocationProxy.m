@@ -10,6 +10,14 @@
 #import "RMMapView.h"
 #import "RMMarker.h"
 #import "RMMarkerManager.h"
+//TODO : my own user location
+#import "RMUserLocationMarker.h"
+//RMProjectedPoint class
+#import "RMFoundation.h"
+//RMProjection -> latLongToPoint
+#import "RMProjection.h"
+//PointtoUI -> projectXYPoint
+#import "RMMercatorToScreenProjection.h"
 
 @interface ShowUserLocationProxy (PrivateMethods)
 
@@ -23,12 +31,6 @@
 @synthesize locationManager;
 
 #pragma mark - lifecycle of user location monitor
-//-(id)init{
-//    if (self = [super init]) {
-//        _showUserLocationStarted = NO;
-//    }
-//    return (self);
-//}
 
 -(id)initWithMap:(RMMapView*)theMap{
     if (self = [super init]) {
@@ -51,7 +53,7 @@
     if (_showUserLocationStarted){
         return;
     }
-    //TODO : start locationManager monitor
+    //\description - start locationManager monitor
     self->locationManager = [[CLLocationManager alloc]init];
     self->locationManager.delegate = self;
     self->locationManager.distanceFilter = kCLLocationAccuracyHundredMeters;
@@ -60,7 +62,7 @@
     if ([CLLocationManager significantLocationChangeMonitoringAvailable]) {
         NSLog(@"Can Starting significantLocationChangeMonitoringAvailable");
         [locationManager startMonitoringSignificantLocationChanges];
-        //TODO : starting userlocation sign
+        //\description - starting userlocation sign
         self->_showUserLocationStarted = YES;
     }
     else{
@@ -79,7 +81,6 @@
     if(!_showUserLocationStarted){
         return;
     }
-    //TODO : stop locationManger monitor
     [self->locationManager stopMonitoringSignificantLocationChanges];
     self->locationManager = nil;
     self->_showUserLocationStarted = NO;
@@ -94,13 +95,13 @@
 - (void)locationManager:(CLLocationManager *)manager
 	didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation{
-	// TODO : Work around a bug in MapKit where user location is not initially zoomed to.
+	//\description - Work around a bug in MapKit where user location is not initially zoomed to.
     if (newLocation == oldLocation){
         NSLog(@"ShowUserLocationProxy::didUpdateToLocation -- location doesn't change before last time");
         return;
     }
     
-    // TODO : see location-awaress guide page 13, if it's a relatively recent event, turn off updates to save power
+    //\description - see location-awaress guide page 13, if it's a relatively recent event, turn off updates to save power
     NSDate* eventDate = newLocation.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     
@@ -109,7 +110,7 @@
         return;
     }
     
-    //TODO : moving user to right location with animiation
+    //\description - moving user to right location with animiation
     NSLog(@"didUpdateToLocation %@ from %@", newLocation, oldLocation);
     [self updateUserIconAminiation:newLocation];
 }
@@ -120,21 +121,27 @@
 //        _userBluedot = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"currentLocation"
 //                                                                                        ofType:@"png"]
 //                        ];
-        //\bug - add the imageNamed: [bundle file]
+        //\bug - add the imageNamed: [bundle file] - orlando's concern, if it's already include into consideration, with my own drawing
+        //       to avoid imaged from externally
         _userBluedot =  [UIImage imageNamed:@"currentLocation.png"];
     }
     
-    //TODO : refer to marker implementation - CLLocation -> CLLocationCoordinate2D
+    //\description - refer to marker implementation - CLLocation -> CLLocationCoordinate2D
     CLLocationCoordinate2D _newClloationcoordinate = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude);
-    //TODO : make marker via markerManager
-	RMMarker *marker = [[RMMarker alloc]initWithUIImage:_userBluedot
-											anchorPoint:CGPointMake(0.5, 1.0)];
-    
-	RMMarkerManager *markerManager = [self->_theMap markerManager];
-	[markerManager addMarker:marker AtLatLong:_newClloationcoordinate];
-	[marker release];
-    
-    //TODO : https://groups.google.com/forum/?fromgroups#!topic/route-me-map/TuTabkrS9p0%5B1-25%5D - add animiation for CALayer
+    if(!self->marker){
+        //\description - make marker via markerManager
+        self->marker = [[RMUserLocationMarker alloc]initWithUIImage:_userBluedot];
+        RMMarkerManager *markerManager = [self->_theMap markerManager];
+        [markerManager addMarker:self->marker AtLatLong:_newClloationcoordinate];
+        [self->marker addLayerAndAnimate];
+        [self->marker release];
+    }
+    else{
+        //\description - move _userBluedot to other location with animiation, perhaps not
+        RMProjectedPoint _projectedPoint = [[self->_theMap.contents projection] latLongToPoint:_newClloationcoordinate];
+        [self->marker setProjectedLocation:_projectedPoint];
+        [marker setPosition:[[self->_theMap.contents mercatorToScreenProjection] projectXYPoint:_projectedPoint]];
+    }
 }
 
 @end

@@ -69,6 +69,8 @@
 /// referenced to upper left corner, y increasing top to bottom. To put the image's upper right corner on the marker's 
 /// #projectedLocation, use an anchor point of (1.0, 0.0);
 - (id) initWithUIImage: (UIImage*) image anchorPoint: (CGPoint) anchorPoint;
+/// \brief return with animiation scope in center
+- (id) initWithUIImage: (UIImage*) image anchorPoint: (CGPoint) _anchorPoint animiationRect:(CGRect)_bounds;
 
 /// changes the labelView to a UILabel with supplied #text and default marker font, using existing text foreground/background color.
 - (void) changeLabelUsingText: (NSString*)text;
@@ -85,7 +87,8 @@
 
 - (void) replaceUIImage:(UIImage*)image;
 - (void) replaceUIImage:(UIImage*)image anchorPoint:(CGPoint)anchorPoint;
-
+///\brief : with replaceUIImage in center 
+- (void) replaceUIImage: (UIImage*) image anchorPoint: (CGPoint) _anchorPoint animiationRect: (CGRect)_bounds;
 
 - (void) dealloc;
 

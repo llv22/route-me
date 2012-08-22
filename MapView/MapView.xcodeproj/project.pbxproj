@@ -213,6 +213,10 @@
 		F14BA14315E387A0001B0F5E /* RMUserLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = F14BA14115E387A0001B0F5E /* RMUserLocationMarker.m */; };
 		F14BA14415E387A0001B0F5E /* RMUserLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = F14BA14115E387A0001B0F5E /* RMUserLocationMarker.m */; };
 		F14BA14515E387A0001B0F5E /* RMUserLocationMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = F14BA14115E387A0001B0F5E /* RMUserLocationMarker.m */; };
+		F14FD31415E4C72C0054BA60 /* RMUserAnimationLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F14FD31215E4C72B0054BA60 /* RMUserAnimationLayer.h */; };
+		F14FD31515E4C72C0054BA60 /* RMUserAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F14FD31315E4C72B0054BA60 /* RMUserAnimationLayer.m */; };
+		F14FD31615E4C72C0054BA60 /* RMUserAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F14FD31315E4C72B0054BA60 /* RMUserAnimationLayer.m */; };
+		F14FD31715E4C72C0054BA60 /* RMUserAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F14FD31315E4C72B0054BA60 /* RMUserAnimationLayer.m */; };
 		F17968F315DE112500763C8E /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = F17968F215DE112500763C8E /* currentLocation.png */; };
 		F17968F415DE112500763C8E /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = F17968F215DE112500763C8E /* currentLocation.png */; };
 		F179690515DE1A7B00763C8E /* RMMapView+ShowUserLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = F179690315DE1A7B00763C8E /* RMMapView+ShowUserLocation.h */; };
@@ -418,6 +422,8 @@
 		DDCD58D21406F8A300F59E0D /* RMTileStreamSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTileStreamSource.m; sourceTree = "<group>"; };
 		F14BA14015E387A0001B0F5E /* RMUserLocationMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMUserLocationMarker.h; sourceTree = "<group>"; };
 		F14BA14115E387A0001B0F5E /* RMUserLocationMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMUserLocationMarker.m; sourceTree = "<group>"; };
+		F14FD31215E4C72B0054BA60 /* RMUserAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMUserAnimationLayer.h; sourceTree = "<group>"; };
+		F14FD31315E4C72B0054BA60 /* RMUserAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMUserAnimationLayer.m; sourceTree = "<group>"; };
 		F17968F215DE112500763C8E /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		F179690315DE1A7B00763C8E /* RMMapView+ShowUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RMMapView+ShowUserLocation.h"; sourceTree = "<group>"; };
 		F179690415DE1A7B00763C8E /* RMMapView+ShowUserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RMMapView+ShowUserLocation.m"; sourceTree = "<group>"; };
@@ -880,6 +886,8 @@
 				F179690A15DE1D3D00763C8E /* ShowUserLocationProxy.m */,
 				F14BA14015E387A0001B0F5E /* RMUserLocationMarker.h */,
 				F14BA14115E387A0001B0F5E /* RMUserLocationMarker.m */,
+				F14FD31215E4C72B0054BA60 /* RMUserAnimationLayer.h */,
+				F14FD31315E4C72B0054BA60 /* RMUserAnimationLayer.m */,
 			);
 			name = UserLocation;
 			sourceTree = "<group>";
@@ -952,6 +960,7 @@
 				F179690515DE1A7B00763C8E /* RMMapView+ShowUserLocation.h in Headers */,
 				F179690B15DE1D3D00763C8E /* ShowUserLocationProxy.h in Headers */,
 				F14BA14215E387A0001B0F5E /* RMUserLocationMarker.h in Headers */,
+				F14FD31415E4C72C0054BA60 /* RMUserAnimationLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1148,6 +1157,7 @@
 				F179690715DE1A7B00763C8E /* RMMapView+ShowUserLocation.m in Sources */,
 				F179690D15DE1D3D00763C8E /* ShowUserLocationProxy.m in Sources */,
 				F14BA14415E387A0001B0F5E /* RMUserLocationMarker.m in Sources */,
+				F14FD31615E4C72C0054BA60 /* RMUserAnimationLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1208,6 +1218,7 @@
 				F179690815DE1A7B00763C8E /* RMMapView+ShowUserLocation.m in Sources */,
 				F179690E15DE1D3D00763C8E /* ShowUserLocationProxy.m in Sources */,
 				F14BA14515E387A0001B0F5E /* RMUserLocationMarker.m in Sources */,
+				F14FD31715E4C72C0054BA60 /* RMUserAnimationLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1268,6 +1279,7 @@
 				F179690615DE1A7B00763C8E /* RMMapView+ShowUserLocation.m in Sources */,
 				F179690C15DE1D3D00763C8E /* ShowUserLocationProxy.m in Sources */,
 				F14BA14315E387A0001B0F5E /* RMUserLocationMarker.m in Sources */,
+				F14FD31515E4C72C0054BA60 /* RMUserAnimationLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

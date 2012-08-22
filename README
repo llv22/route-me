@@ -17,5 +17,7 @@ override the pngs; and also compress and load high resolution-pixel picture
       => ShowUserLocationProxy - add location monitor & marker
 	TODO : 
 	1) better wrapper of marker for userlocation;
-	2) animiation for userlocation;       
+	2) animiation for userlocation;
+	   * user with customized layer - RMUserAnimationLayer and remove it after animiation has been done.
+	   * move to other user location - move to [not done]      
 * wrapped track with animiation and updating
