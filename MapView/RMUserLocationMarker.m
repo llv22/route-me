@@ -21,6 +21,9 @@ const double _dAnmiationRemoveDelay = 2;
 @implementation RMUserLocationMarker
 
 //TODO : add the layer at the bottom of core image
+///\description - should be use CGContextAddPath/CGContextSetRGBFillColor and
+///               *** Gradients/Shadows *** to get central layer without CGImage
+/// page 326, page332
 - (id) initWithUIImage: (UIImage*) image
            anchorPoint: (CGPoint) _anchorPoint{
     return [super initWithUIImage:image anchorPoint:_anchorPoint];
