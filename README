@@ -10,7 +10,7 @@ override the pngs; and also compress and load high resolution-pixel picture
 
 3, enhancement of route-me RMMapView to customized Orlando's MapView
 -> showUserLocation implementation
-* wrapped marker to UserLocation CALayer with animiation
++ wrapped marker to UserLocation CALayer with animiation
    i) UserLocation in naive proxy - ShowUserLocationProxy
       => RMMapView - add ShowUserLocationProxy* proxy instance
       => RMMapView+ShowUserLocation - add informal protocol to enable
@@ -19,5 +19,9 @@ override the pngs; and also compress and load high resolution-pixel picture
 	1) better wrapper of marker for userlocation;
 	2) animiation for userlocation;
 	   * user with customized layer - RMUserAnimationLayer and remove it after animiation has been done.
-	   * move to other user location - move to [not done]      
-* wrapped track with animiation and updating
+	   * move to other user location - move to [done, without testing]
+	   * central blue dot with gradient new layer [not done, in programming iOS 4, Page 326, 332]      
+   ii) User heading enhancement layer - plan [later after route layers]
+
++ wrapped track with animiation and updating
+
