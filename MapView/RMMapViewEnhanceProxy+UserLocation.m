@@ -97,13 +97,13 @@
 
 
 -(void)updateUserIconAminiation:(CLLocation *)newLocation{
-    if (!_userBluedot) {
+    if (!self->_userBluedot) {
         //        _userBluedot = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"currentLocation"
         //                                                                                        ofType:@"png"]
         //                        ];
         //\bug - add the imageNamed: [bundle file] - orlando's concern, if it's already include into consideration, with my own drawing
         //       to avoid imaged from externally
-        _userBluedot =  [UIImage imageNamed:@"currentLocation.png"];
+        self->_userBluedot =  [UIImage imageNamed:@"currentLocation.png"];
     }
     
     //\description - refer to marker implementation - CLLocation -> CLLocationCoordinate2D

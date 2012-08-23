@@ -131,9 +131,9 @@ typedef struct {
     CGFloat rotation;
     float screenScale;
     
-    //\field showUserLocation - storage and extends in RMMapView+ShowUserLocation
+    //\field enhancementProxy - storage and extends in RMMapView+Enhancements - Proxy pattern for extending
     //\author - Orlando, 2012-08
-    RMMapViewEnhanceProxy *_showUserProxy;
+    RMMapViewEnhanceProxy *_enhancementProxy;
 	
 @private
    	BOOL _delegateHasBeforeMapMove;

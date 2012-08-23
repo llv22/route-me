@@ -4,6 +4,8 @@
 //
 //  Created by Ding Orlando on 8/17/12.
 //
+//  refer to - https://groups.google.com/forum/?fromgroups=#!topic/route-me-map/MlNTVxfUyrw RMPath impelemtnation for routing
+//  futhermore with animation effect.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,10 +20,17 @@
     BOOL _showUserLocationStarted;
     
 @private
+#pragma mark - route track private fields
+    NSMutableDictionary* _trackDic;
+    
+#pragma mark - userlocation private fields
+    ///\desc - userBluedot used for showing user location
     UIImage* _userBluedot;
-    //TODO : reference of RMMapView to update user location dot
-    RMMapView* _theMap;
+    ///\desc - userlocation marker for resources
     RMUserLocationMarker *marker;
+    
+    ///\desc - reference of RMMapView
+    RMMapView* _theMap;
 }
 
 @property (readwrite) BOOL showUserLocationStarted;

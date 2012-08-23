@@ -7,6 +7,7 @@
 //
 
 #import "RMMapView+Enhancements.h"
+#import "RMMapViewEnhanceProxy+UserLocation.h"
 #import "RMMapViewEnhanceProxy.h"
 
 @implementation RMMapView (Enhancements)
@@ -15,22 +16,22 @@
 -(void)setShowUserLocation:(BOOL)showUserLocation{
     //TODO : not exists proxy, so don't need to start user location monitor
     if(showUserLocation){
-        if(!self->_showUserProxy){
-            self->_showUserProxy = [[RMMapViewEnhanceProxy alloc]initWithMap:self];
-            [self->_showUserProxy startUserLocationMonitor];
+        if(!self->_enhancementProxy){
+            self->_enhancementProxy = [[RMMapViewEnhanceProxy alloc]initWithMap:self];
+            [self->_enhancementProxy startUserLocationMonitor];
         }
         //else case - already started
     }
     else{
-        if (self->_showUserProxy) {
-            [self->_showUserProxy stopUserLocationMonitor];
+        if (self->_enhancementProxy) {
+            [self->_enhancementProxy stopUserLocationMonitor];
         }
         //else case - already stop
     }
 }
 
 -(BOOL)showUserLocation{
-    return (self->_showUserProxy != nil);
+    return (self->_enhancementProxy != nil);
 }
 
 @end
