@@ -8,7 +8,7 @@
 
 #import "RMMapView.h"
 
-@interface RMMapView (ShowUserLocation)
+@interface RMMapView (Enhancements)
 
 @property (readwrite) BOOL showUserLocation;
 

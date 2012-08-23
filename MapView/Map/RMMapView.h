@@ -92,7 +92,7 @@ git clone git://github.com/route-me/route-me.git
 #import "RMMapViewDelegate.h"
 #import "RMMapContents.h"
 
-@class ShowUserLocationProxy;
+@class RMMapViewEnhanceProxy;
 
 /*! 
  \struct RMGestureDetails
@@ -133,7 +133,7 @@ typedef struct {
     
     //\field showUserLocation - storage and extends in RMMapView+ShowUserLocation
     //\author - Orlando, 2012-08
-    ShowUserLocationProxy *_showUserProxy;
+    RMMapViewEnhanceProxy *_showUserProxy;
 	
 @private
    	BOOL _delegateHasBeforeMapMove;

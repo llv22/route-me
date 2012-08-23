@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import <CoreLocation/CLLocationManager.h>
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
 @class RMMapView;
 @class RMUserLocationMarker;
 
-@interface ShowUserLocationProxy : NSObject<CLLocationManagerDelegate>{
+@interface RMMapViewEnhanceProxy : NSObject<CLLocationManagerDelegate>{
     BOOL _showUserLocationStarted;
     
 @private
@@ -27,9 +28,5 @@
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
 -(id)initWithMap:(RMMapView*)theMap;
-
-#pragma mark - user location monitor management
--(void)startUserLocationMonitor;
--(void)stopUserLocationMonitor;
 
 @end

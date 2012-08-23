@@ -1,12 +1,13 @@
 //
-//  UserLocationProxy.m
+//  RMMapViewEnhanceProxy+UserLocation.m
 //  MapView
 //
-//  Created by Ding Orlando on 8/17/12.
+//  Created by Ding Orlando on 8/23/12.
 //
 //
 
-#import "ShowUserLocationProxy.h"
+#import "RMMapViewEnhanceProxy+UserLocation.h"
+#import "RMMapViewEnhanceProxy.h"
 #import "RMMapView.h"
 #import "RMMarker.h"
 #import "RMMarkerManager.h"
@@ -19,34 +20,13 @@
 //PointtoUI -> projectXYPoint
 #import "RMMercatorToScreenProjection.h"
 
-@interface ShowUserLocationProxy (PrivateMethods)
+@interface RMMapViewEnhanceProxy (PrivateMethods)
 
 -(void)updateUserIconAminiation:(CLLocation *)newLocation;
 
 @end
 
-@implementation ShowUserLocationProxy
-
-@synthesize showUserLocationStarted = _showUserLocationStarted;
-@synthesize locationManager;
-
-#pragma mark - lifecycle of user location monitor
-
--(id)initWithMap:(RMMapView*)theMap{
-    if (self = [super init]) {
-        self->_showUserLocationStarted = NO;
-        self->_theMap = theMap;
-    }
-    return (self);
-}
-
--(void)dealloc{
-    if(self->_showUserLocationStarted){
-        //TODO : stop user location monitor
-        [self stopUserLocationMonitor];
-    }
-    [super dealloc];
-}
+@implementation RMMapViewEnhanceProxy (UserLocation)
 
 #pragma mark - user location monitor
 -(void)startUserLocationMonitor{
@@ -54,14 +34,14 @@
         return;
     }
     //\description - start locationManager monitor
-    self->locationManager = [[CLLocationManager alloc]init];
-    self->locationManager.delegate = self;
-    self->locationManager.distanceFilter = kCLLocationAccuracyHundredMeters;
-    self->locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-        
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLLocationAccuracyHundredMeters;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    
     if ([CLLocationManager significantLocationChangeMonitoringAvailable]) {
         NSLog(@"Can Starting significantLocationChangeMonitoringAvailable");
-        [locationManager startMonitoringSignificantLocationChanges];
+        [self.locationManager startMonitoringSignificantLocationChanges];
         //\description - starting userlocation sign
         self->_showUserLocationStarted = YES;
     }
@@ -81,8 +61,8 @@
     if(!_showUserLocationStarted){
         return;
     }
-    [self->locationManager stopMonitoringSignificantLocationChanges];
-    self->locationManager = nil;
+    [self.locationManager stopMonitoringSignificantLocationChanges];
+    self.locationManager = nil;
     self->_showUserLocationStarted = NO;
 }
 
@@ -118,9 +98,9 @@
 
 -(void)updateUserIconAminiation:(CLLocation *)newLocation{
     if (!_userBluedot) {
-//        _userBluedot = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"currentLocation"
-//                                                                                        ofType:@"png"]
-//                        ];
+        //        _userBluedot = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"currentLocation"
+        //                                                                                        ofType:@"png"]
+        //                        ];
         //\bug - add the imageNamed: [bundle file] - orlando's concern, if it's already include into consideration, with my own drawing
         //       to avoid imaged from externally
         _userBluedot =  [UIImage imageNamed:@"currentLocation.png"];

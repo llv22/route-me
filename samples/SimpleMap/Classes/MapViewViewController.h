@@ -27,7 +27,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RMMapView.h"
-#import "RMMapView+ShowUserLocation.h"
+#import "RMMapView+Enhancements.h"
 
 @interface MapViewViewController : UIViewController <RMMapViewDelegate> {
 	IBOutlet RMMapView * mapView;

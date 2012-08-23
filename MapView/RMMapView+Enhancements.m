@@ -6,17 +6,17 @@
 //
 //
 
-#import "RMMapView+ShowUserLocation.h"
-#import "ShowUserLocationProxy.h"
+#import "RMMapView+Enhancements.h"
+#import "RMMapViewEnhanceProxy.h"
 
-@implementation RMMapView (ShowUserLocation)
+@implementation RMMapView (Enhancements)
 
 #pragma mark - userLocation enhancement - non-thread safety for this version v0.1
 -(void)setShowUserLocation:(BOOL)showUserLocation{
     //TODO : not exists proxy, so don't need to start user location monitor
     if(showUserLocation){
         if(!self->_showUserProxy){
-            self->_showUserProxy = [[ShowUserLocationProxy alloc]initWithMap:self];
+            self->_showUserProxy = [[RMMapViewEnhanceProxy alloc]initWithMap:self];
             [self->_showUserProxy startUserLocationMonitor];
         }
         //else case - already started
