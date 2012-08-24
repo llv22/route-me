@@ -20,7 +20,7 @@
     BOOL _showUserLocationStarted;
     
 @private
-#pragma mark - route track private fields
+#pragma mark - route track private fields long->mapobject<TrafficTrack>
     NSMutableDictionary* _trackDic;
     
 #pragma mark - userlocation private fields

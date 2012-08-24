@@ -121,8 +121,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				F1A5C74B15E7597300A14551 /* route-request */,
 				EBE3696D0F673B95003DC21C /* MapView.xcodeproj */,
+				F1A5C74B15E7597300A14551 /* route-request */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				966504400F6867E60036562A /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,

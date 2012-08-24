@@ -8,6 +8,7 @@
 
 #import "TrafficTrack.h"
 
+//TODO : http://restkit.org mapping rule - https://github.com/llv22/RestKit
 @implementation TrafficTrack
 
 @end

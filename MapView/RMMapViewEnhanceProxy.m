@@ -9,6 +9,8 @@
 #import "RMMapViewEnhanceProxy.h"
 #import "RMMapViewEnhanceProxy+UserLocation.h"
 
+const int _initSize = 20;
+
 @implementation RMMapViewEnhanceProxy
 
 @synthesize showUserLocationStarted = _showUserLocationStarted;
@@ -20,6 +22,7 @@
     if (self = [super init]) {
         self->_showUserLocationStarted = NO;
         self->_theMap = theMap;
+        self->_trackDic = [[NSMutableDictionary alloc]initWithCapacity:_initSize];
     }
     return (self);
 }
@@ -29,6 +32,7 @@
         //TODO : stop user location monitor
         [self stopUserLocationMonitor];
     }
+    [self->_trackDic dealloc];
     [super dealloc];
 }
 
