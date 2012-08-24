@@ -27,6 +27,8 @@
 		EBE3697E0F673B9A003DC21C /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE3697D0F673B95003DC21C /* libMapView.a */; };
 		F14BA13F15E33C2D001B0F5E /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = F14BA13E15E33C2D001B0F5E /* currentLocation.png */; };
 		F16E80DF15DE421300008188 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F16E80DE15DE421300008188 /* Location.gpx */; };
+		F1A5C74E15E7598F00A14551 /* request.json in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C74C15E7598F00A14551 /* request.json */; };
+		F1A5C74F15E7598F00A14551 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C74D15E7598F00A14551 /* response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		EBE3696D0F673B95003DC21C /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = ../../MapView/MapView.xcodeproj; sourceTree = SOURCE_ROOT; };
 		F14BA13E15E33C2D001B0F5E /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		F16E80DE15DE421300008188 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		F1A5C74C15E7598F00A14551 /* request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = request.json; sourceTree = "<group>"; };
+		F1A5C74D15E7598F00A14551 /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				F14BA13E15E33C2D001B0F5E /* currentLocation.png */,
+				F1A5C74B15E7597300A14551 /* route-request */,
 				EBE3696D0F673B95003DC21C /* MapView.xcodeproj */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				966504400F6867E60036562A /* Classes */,
@@ -186,6 +190,16 @@
 				2B246AE20F8ADD5F00A7D55D /* RM Unit Tests.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F1A5C74B15E7597300A14551 /* route-request */ = {
+			isa = PBXGroup;
+			children = (
+				F1A5C74C15E7598F00A14551 /* request.json */,
+				F1A5C74D15E7598F00A14551 /* response.json */,
+				F14BA13E15E33C2D001B0F5E /* currentLocation.png */,
+			);
+			name = "route-request";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +296,8 @@
 				966504520F6868000036562A /* marker-red-withletter.png in Resources */,
 				966504530F6868000036562A /* marker-red.png in Resources */,
 				F16E80DF15DE421300008188 /* Location.gpx in Resources */,
+				F1A5C74E15E7598F00A14551 /* request.json in Resources */,
+				F1A5C74F15E7598F00A14551 /* response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

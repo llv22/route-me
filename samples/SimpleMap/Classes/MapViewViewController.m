@@ -159,8 +159,8 @@
     //TODO : adjustment of screen central location
 	CLLocationCoordinate2D coolPlace;
     //Move to NanJing's zhong shang maintain
-	coolPlace.latitude = 32.074284;
-	coolPlace.longitude = 118.84203;
+	coolPlace.latitude = 32.04208598239687;
+	coolPlace.longitude = 118.78337714351665;
     [mapView moveToLatLong:coolPlace];
     mapView.showUserLocation = YES;
 	
