@@ -25,4 +25,7 @@ override the pngs; and also compress and load high resolution-pixel picture
    ii) User heading enhancement layer - plan [later after route layers]
 
 + wrapped track with animiation and updating
++ RestKit json format based on response of offline data
+    i) https://github.com/llv22/RestKit - Quick start with adding submodule
+	git submodule add git://github.com/llv22/RestKit.git RestKit
 
