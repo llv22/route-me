@@ -44,6 +44,7 @@
 -(void)dealloc{
     [self->_track removeObserver:self forKeyPath:@"wcategory"];
     [self->_track dealloc];
+    [super dealloc];
 }
 
 @end

@@ -35,7 +35,6 @@ const int _initSize = 20;
     }
     [self->_trackDic dealloc];
     [super dealloc];
-    [TrafficTrack getWcategory];
 }
 
 @end
