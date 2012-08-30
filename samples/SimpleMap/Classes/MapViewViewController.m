@@ -25,6 +25,10 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+///\des - testing header file
+#import <RestKit/RestKit.h>
+#import <RestKit/RKJSONParserJSONKit.h>
+
 #import "MapViewViewController.h"
 
 #import "RMMapContents.h"
@@ -59,6 +63,8 @@
 
 - (void)testMarkers
 {
+//    ///\des - RestKit-framework testing code
+//    [[RKParserRegistry sharedRegistry] setParserClass:[RKJSONParserJSONKit class] forMIMEType:@"application/json"];
 	RMMarkerManager *markerManager = [mapView markerManager];
 	NSArray *markers = [markerManager markers];
 	NSLog(@"Nb markers %d", [markers count]);

@@ -32,3 +32,16 @@ override the pngs; and also compress and load high resolution-pixel picture
 	git submodule init
 	cd RestKit
 	git pull origin master
+	git add RestKit
+	git commit -m ""
+    reference - http://josephj.com/entry.php?id=342
+		http://book.git-scm.com/5_submodules.html
+		*** https://github.com/RestKit/RestKit/wiki/Installing-RestKit-in-Xcode-4.x ***
+		*** https://github.com/llv22/RestKit ***
+       RestKit testing code - 
+	#import <RestKit/RestKit.h>
+	#import <RestKit/RKJSONParserJSONKit.h>
+       RestKit line 66 - 67
+	///des - RestKit-framework testing code
+    	[[RKParserRegistry sharedRegistry] setParserClass:[RKJSONParserJSONKit class] forMIMEType:@"application/json"];
+

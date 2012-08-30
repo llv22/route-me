@@ -27,6 +27,13 @@
 		EBE3697E0F673B9A003DC21C /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE3697D0F673B95003DC21C /* libMapView.a */; };
 		F14BA13F15E33C2D001B0F5E /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = F14BA13E15E33C2D001B0F5E /* currentLocation.png */; };
 		F16E80DF15DE421300008188 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F16E80DE15DE421300008188 /* Location.gpx */; };
+		F1A11B1415EFA0FE00BE27ED /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B0915EF9F3800BE27ED /* libRestKit.a */; };
+		F1A11B1615EFA10E00BE27ED /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B1515EFA10E00BE27ED /* CFNetwork.framework */; };
+		F1A11B1815EFA11800BE27ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B1715EFA11800BE27ED /* CoreData.framework */; };
+		F1A11B1A15EFA12C00BE27ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B1915EFA12C00BE27ED /* Security.framework */; };
+		F1A11B1C15EFA13600BE27ED /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B1B15EFA13600BE27ED /* MobileCoreServices.framework */; };
+		F1A11B1E15EFA14100BE27ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B1D15EFA14100BE27ED /* SystemConfiguration.framework */; };
+		F1A11B2015EFA14B00BE27ED /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A11B1F15EFA14B00BE27ED /* libxml2.dylib */; };
 		F1A5C74E15E7598F00A14551 /* request.json in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C74C15E7598F00A14551 /* request.json */; };
 		F1A5C74F15E7598F00A14551 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = F1A5C74D15E7598F00A14551 /* response.json */; };
 /* End PBXBuildFile section */
@@ -60,6 +67,48 @@
 			remoteGlobalIDString = 17157D87133BBC8300E28941;
 			remoteInfo = MapViewTests;
 		};
+		F1A11B0815EF9F3800BE27ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		F1A11B0A15EF9F3800BE27ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		F1A11B0C15EF9F3800BE27ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		F1A11B0E15EF9F3800BE27ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		F1A11B1015EF9F3800BE27ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
+		};
+		F1A11B1215EFA0A800BE27ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +137,13 @@
 		EBE3696D0F673B95003DC21C /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = ../../MapView/MapView.xcodeproj; sourceTree = SOURCE_ROOT; };
 		F14BA13E15E33C2D001B0F5E /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		F16E80DE15DE421300008188 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		F1A11B1515EFA10E00BE27ED /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F1A11B1715EFA11800BE27ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F1A11B1915EFA12C00BE27ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F1A11B1B15EFA13600BE27ED /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F1A11B1D15EFA14100BE27ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F1A11B1F15EFA14B00BE27ED /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		F1A5C74C15E7598F00A14551 /* request.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = request.json; sourceTree = "<group>"; };
 		F1A5C74D15E7598F00A14551 /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,11 +153,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDDE0E20F649CE100377FFE /* QuartzCore.framework in Frameworks */,
+				F1A11B2015EFA14B00BE27ED /* libxml2.dylib in Frameworks */,
+				F1A11B1E15EFA14100BE27ED /* SystemConfiguration.framework in Frameworks */,
+				F1A11B1C15EFA13600BE27ED /* MobileCoreServices.framework in Frameworks */,
+				F1A11B1A15EFA12C00BE27ED /* Security.framework in Frameworks */,
+				F1A11B1815EFA11800BE27ED /* CoreData.framework in Frameworks */,
+				F1A11B1615EFA10E00BE27ED /* CFNetwork.framework in Frameworks */,
+				F1A11B1415EFA0FE00BE27ED /* libRestKit.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
 				EBDDE0E00F649CE100377FFE /* CoreLocation.framework in Frameworks */,
-				EBDDE0E20F649CE100377FFE /* QuartzCore.framework in Frameworks */,
 				EBDDE0E40F649CE100377FFE /* libsqlite3.dylib in Frameworks */,
 				EBE3697E0F673B9A003DC21C /* libMapView.a in Frameworks */,
 			);
@@ -122,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE3696D0F673B95003DC21C /* MapView.xcodeproj */,
+				F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */,
 				F1A5C74B15E7597300A14551 /* route-request */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				966504400F6867E60036562A /* Classes */,
@@ -161,6 +225,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1A11B1F15EFA14B00BE27ED /* libxml2.dylib */,
+				F1A11B1D15EFA14100BE27ED /* SystemConfiguration.framework */,
+				F1A11B1B15EFA13600BE27ED /* MobileCoreServices.framework */,
+				F1A11B1915EFA12C00BE27ED /* Security.framework */,
+				F1A11B1715EFA11800BE27ED /* CoreData.framework */,
+				F1A11B1515EFA10E00BE27ED /* CFNetwork.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
@@ -192,6 +262,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F1A11AFE15EF9F3700BE27ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1A11B0915EF9F3800BE27ED /* libRestKit.a */,
+				F1A11B0B15EF9F3800BE27ED /* RestKitTests.octest */,
+				F1A11B0D15EF9F3800BE27ED /* RestKit.framework */,
+				F1A11B0F15EF9F3800BE27ED /* RestKitFrameworkTests.octest */,
+				F1A11B1115EF9F3800BE27ED /* RestKitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F1A5C74B15E7597300A14551 /* route-request */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +298,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F1A11B1315EFA0A800BE27ED /* PBXTargetDependency */,
 				2BB42BEF0F678951009967BB /* PBXTargetDependency */,
 			);
 			name = SimpleMap;
@@ -249,6 +332,10 @@
 					ProductGroup = EBE3696E0F673B95003DC21C /* Products */;
 					ProjectRef = EBE3696D0F673B95003DC21C /* MapView.xcodeproj */;
 				},
+				{
+					ProductGroup = F1A11AFE15EF9F3700BE27ED /* Products */;
+					ProjectRef = F1A11AFD15EF9F3700BE27ED /* RestKit.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -277,6 +364,41 @@
 			fileType = wrapper.cfbundle;
 			path = MapViewTests.octest;
 			remoteRef = F189C7AF15D368DE00C3B7DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1A11B0915EF9F3800BE27ED /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = F1A11B0815EF9F3800BE27ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1A11B0B15EF9F3800BE27ED /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = F1A11B0A15EF9F3800BE27ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1A11B0D15EF9F3800BE27ED /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = F1A11B0C15EF9F3800BE27ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1A11B0F15EF9F3800BE27ED /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = F1A11B0E15EF9F3800BE27ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F1A11B1115EF9F3800BE27ED /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = F1A11B1015EF9F3800BE27ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -322,6 +444,11 @@
 			name = MapView;
 			targetProxy = 2BB42BEE0F678951009967BB /* PBXContainerItemProxy */;
 		};
+		F1A11B1315EFA0A800BE27ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = F1A11B1215EFA0A800BE27ED /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -334,9 +461,15 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SimpleMap_Prefix.pch;
-				HEADER_SEARCH_PATHS = "../../MapView/**";
+				HEADER_SEARCH_PATHS = (
+					"../../MapView/**",
+					"$(BUILT_PRODUCTS_DIR)/../../Headers/**",
+				);
 				INFOPLIST_FILE = Info.plist;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = SimpleMap;
 			};
 			name = Debug;
@@ -348,9 +481,15 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SimpleMap_Prefix.pch;
-				HEADER_SEARCH_PATHS = "../../MapView/**";
+				HEADER_SEARCH_PATHS = (
+					"../../MapView/**",
+					"$(BUILT_PRODUCTS_DIR)/../../Headers/**",
+				);
 				INFOPLIST_FILE = Info.plist;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = SimpleMap;
 			};
 			name = Release;
