@@ -28,4 +28,7 @@ override the pngs; and also compress and load high resolution-pixel picture
 + RestKit json format based on response of offline data
     i) https://github.com/llv22/RestKit - Quick start with adding submodule
 	git submodule add git://github.com/llv22/RestKit.git RestKit
-
+	git commit -am ""
+	git submodule init
+	cd RestKit
+	git pull origin master
