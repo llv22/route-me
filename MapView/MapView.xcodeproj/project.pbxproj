@@ -239,6 +239,8 @@
 		F179690C15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F179690A15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m */; };
 		F179690D15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F179690A15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m */; };
 		F179690E15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F179690A15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m */; };
+		F1A11B2715EFBA3400BE27ED /* RMTrafficPath.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A11B2515EFBA3400BE27ED /* RMTrafficPath.h */; };
+		F1A11B2815EFBA3400BE27ED /* RMTrafficPath.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A11B2615EFBA3400BE27ED /* RMTrafficPath.m */; };
 		F56554F8146E002B00623AC9 /* RMURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = F56554F6146E002B00623AC9 /* RMURLConnectionOperation.h */; };
 		F56554F9146E002B00623AC9 /* RMURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F56554F7146E002B00623AC9 /* RMURLConnectionOperation.m */; };
 		F5C12D2A0F8A86CA00A894D2 /* RMGeoHash.h in Headers */ = {isa = PBXBuildFile; fileRef = F5C12D280F8A86CA00A894D2 /* RMGeoHash.h */; };
@@ -447,6 +449,8 @@
 		F179690415DE1A7B00763C8E /* RMMapView+Enhancements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RMMapView+Enhancements.m"; sourceTree = "<group>"; };
 		F179690915DE1D3D00763C8E /* RMMapViewEnhanceProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapViewEnhanceProxy.h; sourceTree = "<group>"; };
 		F179690A15DE1D3D00763C8E /* RMMapViewEnhanceProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapViewEnhanceProxy.m; sourceTree = "<group>"; };
+		F1A11B2515EFBA3400BE27ED /* RMTrafficPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMTrafficPath.h; sourceTree = "<group>"; };
+		F1A11B2615EFBA3400BE27ED /* RMTrafficPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMTrafficPath.m; sourceTree = "<group>"; };
 		F56554F6146E002B00623AC9 /* RMURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMURLConnectionOperation.h; sourceTree = "<group>"; };
 		F56554F7146E002B00623AC9 /* RMURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMURLConnectionOperation.m; sourceTree = "<group>"; };
 		F5C12D280F8A86CA00A894D2 /* RMGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGeoHash.h; sourceTree = "<group>"; };
@@ -896,6 +900,8 @@
 				F12DB8F015E5E5DD00D37624 /* RMMapViewEnhanceProxy+TrafficStreet.m */,
 				F12DB90715E63A4800D37624 /* TrafficTrack.h */,
 				F12DB90815E63A4800D37624 /* TrafficTrack.m */,
+				F1A11B2515EFBA3400BE27ED /* RMTrafficPath.h */,
+				F1A11B2615EFBA3400BE27ED /* RMTrafficPath.m */,
 			);
 			name = Route;
 			sourceTree = "<group>";
@@ -1004,6 +1010,7 @@
 				F12DB8EB15E5DCF300D37624 /* RMMapViewEnhanceProxy+UserLocation.h in Headers */,
 				F12DB8F115E5E5DD00D37624 /* RMMapViewEnhanceProxy+TrafficStreet.h in Headers */,
 				F12DB90915E63A4800D37624 /* TrafficTrack.h in Headers */,
+				F1A11B2715EFBA3400BE27ED /* RMTrafficPath.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1332,6 +1339,7 @@
 				F12DB8EC15E5DCF300D37624 /* RMMapViewEnhanceProxy+UserLocation.m in Sources */,
 				F12DB8F215E5E5DD00D37624 /* RMMapViewEnhanceProxy+TrafficStreet.m in Sources */,
 				F12DB90A15E63A4800D37624 /* TrafficTrack.m in Sources */,
+				F1A11B2815EFBA3400BE27ED /* RMTrafficPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

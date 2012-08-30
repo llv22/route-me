@@ -11,8 +11,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-static int _wcategory = 0;
-
 @interface TrafficTrack : NSObject
 
 @property (nonatomic, readwrite) CLLocationCoordinate2D startpoint;
@@ -20,7 +18,7 @@ static int _wcategory = 0;
 @property (nonatomic, readwrite) long sectionid;
 @property (nonatomic, readwrite) double speed;
 @property (nonatomic, readwrite) float linewidth;
-@property (nonatomic, readwrite, getter = getWcategory, setter = setWcategory:) int wcategory;
+@property (nonatomic, readwrite) int wcategory;
 ///\des - get from speed?
 @property (nonatomic, readonly, getter = getUicolor) UIColor* uicolor;
 

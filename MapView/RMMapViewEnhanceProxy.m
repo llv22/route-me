@@ -8,6 +8,7 @@
 
 #import "RMMapViewEnhanceProxy.h"
 #import "RMMapViewEnhanceProxy+UserLocation.h"
+#import "TrafficTrack.h"
 
 const int _initSize = 20;
 
@@ -34,6 +35,7 @@ const int _initSize = 20;
     }
     [self->_trackDic dealloc];
     [super dealloc];
+    [TrafficTrack getWcategory];
 }
 
 @end

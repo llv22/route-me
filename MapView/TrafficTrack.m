@@ -26,7 +26,7 @@ const double weight_2_mid = 30;
 //+ (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 -(UIColor*) getUicolor{
     UIColor* _color = nil;
-    if(_wcategory == 1){
+    if(self->wcategory == 1){
         if(self.speed < weight_low){
             _color = [UIColor colorWithRed:255 green:255*(self.speed/weight_low) blue:0 alpha:1.0];
 //            color = String(rgb2Hex(255,255*(weight/weight_low),0));
@@ -57,17 +57,6 @@ const double weight_2_mid = 30;
     }
     
     return (_color);
-}
-
--(int) getWcategory{
-    return _wcategory;
-}
-
--(void) setWcategory:(int)w{
-    //Local declaration of 'wcategory' hides instance variable
-    if (w != _wcategory) {
-        _wcategory = w;
-    }
 }
 
 @end
