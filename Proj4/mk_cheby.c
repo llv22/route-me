@@ -136,7 +136,7 @@ mk_cheby(projUV a, projUV b, double res, projUV *resid, projUV (*func)(projUV),
 							(double *)pj_malloc(sizeof(double) * ncu[i])))
 						for (j = 0; j < ncu[i]; ++j)
 							*p++ = (w[i] + j)->u;
-					else
+                    else
 						goto error;
 			for (i = 0; i < nrv; ++i) /* same for v */
 				Ts->cv[i].m = ncv[i];

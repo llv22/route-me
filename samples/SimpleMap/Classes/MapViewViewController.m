@@ -144,9 +144,13 @@
 //	}
 }
 
+//TODO : https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html
+//TODO : http://cocoadev.com/wiki/NSLog
 - (void) tapOnLabelForMarker:(RMMarker*) marker onMap:(RMMapView*) map
 {
-	NSLog(@"Label <0x%x, RC:%u> tapped for marker <0x%x, RC:%u>",  marker.label, [marker.label retainCount], marker, [marker retainCount]);
+//	NSLog(@"Label <0x%x, RC:%u> tapped for marker <0x%x, RC:%u>",  marker.label, [marker.label retainCount], marker, [marker retainCount]);
+//  ///\des - warning : Users/llv22/Documents/i058959_dev/00_apple/05_nmap/route-me/samples/SimpleMap/Classes/MapViewViewController.m:151:20: Format specifies type 'unsigned int' but the argument has type 'UIView *'
+	NSLog(@"Label <0x%p, RC:%u> tapped for marker <0x%p, RC:%u>",  marker.label, [marker.label retainCount], marker, [marker retainCount]);
 //	[marker changeLabelUsingText:[NSString stringWithFormat:@"Tapped! (%u)", ++tapCount]];
 }
 
