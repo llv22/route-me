@@ -19,6 +19,7 @@ const double weight_2_mid = 30;
 
 @synthesize startpoint, endpoint, sectionid, speed, linewidth;
 @synthesize uicolor;
+@synthesize isAnimated;
 @synthesize wcategory;
 
 //TODO : showSegmentWeightOnOSMMap with speed line way - http://blog.csdn.net/yohohohoho/article/details/6738757
@@ -57,6 +58,24 @@ const double weight_2_mid = 30;
     }
     
     return (_color);
+}
+
+//TODO : for lower speed level, animated = NO; however, this could be refactored
+-(BOOL) isAnimated{
+    BOOL _isAnimated = (YES);
+    if(self->wcategory == 1){
+        if(self.speed < weight_low){
+            _isAnimated = (NO);
+        }
+    }
+    else
+    {
+        if(self.speed < weight_2_low){
+            _isAnimated = (NO);
+        }
+    }
+    
+    return (_isAnimated);
 }
 
 @end

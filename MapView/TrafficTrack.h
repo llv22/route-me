@@ -21,6 +21,7 @@
 @property (nonatomic, readwrite) int wcategory;
 ///\des - get from speed?
 @property (nonatomic, readonly, getter = getUicolor) UIColor* uicolor;
+@property (nonatomic, readonly, getter = isAnimated) BOOL isAnimated;
 
 ///\des - auto-release for http://stackoverflow.com/questions/6673477/objective-c-static-field-issue
 
