@@ -44,4 +44,7 @@ override the pngs; and also compress and load high resolution-pixel picture
        RestKit line 66 - 67
 	///des - RestKit-framework testing code
     	[[RKParserRegistry sharedRegistry] setParserClass:[RKJSONParserJSONKit class] forMIMEType:@"application/json"];
-
+    ii) traffic track maintenance
+	1) newly insertion of traffic track
+	2) update the existing traffic track
+	3) switch category of traffic track

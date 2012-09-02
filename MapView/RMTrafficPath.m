@@ -9,16 +9,21 @@
 #import "RMTrafficPath.h"
 #import "TrafficTrack.h"
 
+@interface RMTrafficPath(PrivateMethods)
+
+-(void)updateRMTrafficPathforCategory;
+
+@end
+
 @implementation RMTrafficPath
 
 -(id)initWithTrafficTrack:(TrafficTrack*)track{
     if (self = [super init]) {
         self->_track = track;
         [self->_track addObserver:self
-                  forKeyPath:@"wcategory"
-                     options:(NSKeyValueObservingOptionNew |
-                              NSKeyValueObservingOptionOld)
-                     context:NULL];
+                       forKeyPath:@"wcategory"
+                          options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                          context:NULL];
     }
     return (self);
 }
@@ -27,9 +32,8 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    
     if ([keyPath isEqual:@"wcategory"]) {
-        
+        [self updateRMTrafficPathforCategory];
     }
     /*
      Be sure to call the superclass's implementation *if it implements it*.
@@ -45,6 +49,11 @@
     [self->_track removeObserver:self forKeyPath:@"wcategory"];
     [self->_track dealloc];
     [super dealloc];
+}
+
+//TODO : when wcategory has been changed to new value, the uicolor layer should be changed accordingly here.
+-(void)updateRMTrafficPathforCategory{
+    
 }
 
 @end
