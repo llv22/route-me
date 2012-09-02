@@ -20,8 +20,8 @@
     BOOL _showUserLocationStarted;
     
 @private
-#pragma mark - route track private fields long->mapobject<TrafficTrack> [sectionid->TrafficTrack*]
-    NSMutableDictionary* _trackDic;
+#pragma mark - route track private fields long->mapobject<RMTrafficPath> [sectionid->RMTrafficPath*]
+    NSMutableDictionary* _rmtrackDic;
     
 #pragma mark - userlocation private fields
     ///\desc - userBluedot used for showing user location

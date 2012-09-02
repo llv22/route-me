@@ -23,7 +23,7 @@ const int _initSize = 20;
     if (self = [super init]) {
         self->_showUserLocationStarted = NO;
         self->_theMap = theMap;
-        self->_trackDic = [[NSMutableDictionary alloc]initWithCapacity:_initSize];
+        self->_rmtrackDic = [[NSMutableDictionary alloc]initWithCapacity:_initSize];
     }
     return (self);
 }
@@ -33,7 +33,9 @@ const int _initSize = 20;
         //TODO : stop user location monitor
         [self stopUserLocationMonitor];
     }
-    [self->_trackDic dealloc];
+    [self->_rmtrackDic removeAllObjects];
+    [self->_rmtrackDic dealloc];
+    self->_rmtrackDic = nil;
     [super dealloc];
 }
 

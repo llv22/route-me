@@ -14,7 +14,7 @@
 #pragma mark - traffic track monitor management [insert&update,switch category]
 
 -(void)postTrafficTracks:(NSArray*)tracks;
--(void)asynUpdateTrafficTack:(TrafficTrack*)track;
+-(void)asynHandleTrafficTack:(TrafficTrack*)track;
 -(void)clearTrafficTracks;
 
 @end
