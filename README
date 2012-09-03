@@ -44,6 +44,21 @@ override the pngs; and also compress and load high resolution-pixel picture
        RestKit line 66 - 67
 	///des - RestKit-framework testing code
     	[[RKParserRegistry sharedRegistry] setParserClass:[RKJSONParserJSONKit class] forMIMEType:@"application/json"];
+     
+     ii) submodule update, when submodule has been modified from remote branch
+	dings-Mac:route-me llv22$ git submodule update --recursive/--init
+	fatal: reference is not a tree: ce565d90ce065e93e37ae23930114f4d209f5777
+	Unable to checkout 'ce565d90ce065e93e37ae23930114f4d209f5777' in submodule path 'RestKit'
+	dings-Mac:route-me llv22$ git submodule status
+	+48ed605d7ac31262d93a258f46708e586ff0846b RestKit (v0.10.2-4-g48ed605)
+	dings-Mac:route-me llv22$ cd RestKit
+	dings-Mac:RestKit llv22$ git checkout master && git pull
+	Checking out files: 100% (766/766), done.
+	Already on 'master'
+	Already up-to-date.
+	
+	refer to : http://stackoverflow.com/questions/1030169/git-easy-way-pull-latest-of-all-submodules
+
     ii) traffic track maintenance
 	1) newly insertion of traffic track
 	2) update the existing traffic track
