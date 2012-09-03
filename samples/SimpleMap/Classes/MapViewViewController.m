@@ -42,6 +42,18 @@
 //TODO : customized tile server address
 #import "RMVirtualEarthSource.h"
 
+//TODO : TrafficTrack
+#import "TrafficTrack.h"
+#import "RMMapViewEnhanceProxy+TrafficStreet.h"
+
+const int _iFirstTrackDelay = 10;
+
+@interface MapViewViewController (PrivateMethods)
+
+-(void)loadTrafficTracksFromJsonFile;
+
+@end
+
 @implementation MapViewViewController
 
 @synthesize mapView;
@@ -184,6 +196,14 @@
 //	[markerManager addMarker:marker AtLatLong:[[mapView contents] mapCenter]];
 //	[marker release];
 	NSLog(@"Center: Lat: %lf Lon: %lf", mapView.contents.mapCenter.latitude, mapView.contents.mapCenter.longitude);
+    [self performSelector:@selector(loadTrafficTracksFromJsonFile) withObject:nil afterDelay:_iFirstTrackDelay];
+}
+
+//TODO : load json into TrafficTrack via RestKit model
+-(void)loadTrafficTracksFromJsonFile{
+//    TrafficTrack* item = nil;
+    NSArray* items = [NSArray arrayWithObjects:nil];
+    [mapView postTrafficTracks:items];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

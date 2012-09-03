@@ -8,6 +8,7 @@
 
 #import "RMMapViewEnhanceProxy.h"
 #import "RMMapViewEnhanceProxy+UserLocation.h"
+#import "RMMapViewEnhanceProxy+TrafficStreet.h"
 #import "TrafficTrack.h"
 
 const int _initSize = 20;
