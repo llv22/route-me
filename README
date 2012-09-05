@@ -22,6 +22,9 @@ override the pngs; and also compress and load high resolution-pixel picture
 	   * move to other user location - move to [done, without testing]
 	   * central blue dot with gradient new layer [not done, in programming iOS 4, Page 326, 332]
            * blue dot anmiation with spring effect [not done]      
+   bug-lists:
+	1) quit from application, then switch off - stopMonitoringSignificantLocationChanges [not done]
+	2) user location animation & icon not bitmap
    ii) User heading enhancement layer - plan [later after route layers]
 
 + wrapped track with animiation and updating

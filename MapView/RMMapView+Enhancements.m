@@ -23,7 +23,6 @@
     if (!self->_enhancementProxy) {
         self->_enhancementProxy = [[RMMapViewEnhanceProxy alloc]initWithMap:self];
     }
-    
     return (self->_enhancementProxy);
 }
 
@@ -32,6 +31,7 @@
     //TODO : not exists proxy, so don't need to start user location monitor
     if(showUserLocation){
         if(!self->_enhancementProxy){
+            [self singleton];
             [self->_enhancementProxy startUserLocationMonitor];
         }
         //else case - already started
